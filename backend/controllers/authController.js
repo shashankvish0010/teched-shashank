@@ -77,7 +77,7 @@ const editDetails = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -111,7 +111,7 @@ const editBio = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -160,7 +160,7 @@ const prefLanguage = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -200,7 +200,7 @@ const addEducation = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -238,7 +238,7 @@ const editEducation = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -295,7 +295,7 @@ const addExperience = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -361,7 +361,7 @@ const editExperience = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
@@ -450,7 +450,7 @@ const editSocial = async () => {
       userId,
     ]);
 
-    if (Number(result.row) <= 0) {
+    if (Number(result.rowCount) <= 0) {
       res.json({ success: false, message: "No user found" });
     }
 
