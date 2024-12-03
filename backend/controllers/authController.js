@@ -1,11 +1,11 @@
 const crypto = require("crypto");
 const db = require("../dbconnect");
 
-export const initialServer = (req, res) => {
+const initialServer = (req, res) => {
   res.json({ success: true, message: `Hello from teched loan app server.` });
 };
 
-export const userRegister = async (req, res) => {
+const userRegister = async (req, res) => {
   const id = crypto.randomUUID();
 
   const {
@@ -64,7 +64,7 @@ export const userRegister = async (req, res) => {
   }
 };
 
-export const editDetails = async () => {
+const editDetails = async () => {
   const { firstname, lastname, age, gender, user_address, email } = req.body;
   const userId = req.params;
   if (!userId) {
@@ -97,7 +97,7 @@ export const editDetails = async () => {
   }
 };
 
-export const editBio = async () => {
+const editBio = async () => {
   const { bio } = req.body;
   const { userId } = req.params();
 
@@ -131,7 +131,7 @@ export const editBio = async () => {
   }
 };
 
-export const prefLanguage = async () => {
+const prefLanguage = async () => {
   const { language } = req.body;
   const { userId } = req.params();
 
@@ -180,7 +180,7 @@ export const prefLanguage = async () => {
   }
 };
 
-export const addEducation = async () => {
+const addEducation = async () => {
   const { degree, college, field, start_date, end_date } = req.body;
   const { userId } = req.params();
   const id = crypto.randomUUID();
@@ -219,7 +219,7 @@ export const addEducation = async () => {
   }
 };
 
-export const editEducation = async () => {
+const editEducation = async () => {
   const { degree, college, field, start_date, end_date } = req.body;
   const { userId } = req.params();
 
@@ -258,7 +258,7 @@ export const editEducation = async () => {
   }
 };
 
-export const addExperience = async () => {
+const addExperience = async () => {
   const id = crypto.randomUUID();
 
   const {
@@ -327,7 +327,7 @@ export const addExperience = async () => {
   }
 };
 
-export const editExperience = async () => {
+const editExperience = async () => {
   const {
     job_title,
     company,
@@ -390,7 +390,7 @@ export const editExperience = async () => {
   }
 };
 
-export const addSocial = async () => {
+const addSocial = async () => {
   const { linkedin, instagram, facebook, x } = req.body;
   const { userId } = req.params();
 
@@ -431,7 +431,7 @@ export const addSocial = async () => {
   }
 };
 
-export const editSocial = async () => {
+const editSocial = async () => {
   const { linkedin, instagram, facebook, x } = req.body;
   const { userId } = req.params();
 
@@ -468,4 +468,17 @@ export const editSocial = async () => {
       message: "Error occured while adding education.",
     });
   }
+};
+
+module.exports = {
+  initialServer,
+  userRegister,
+  editBio,
+  prefLanguage,
+  addEducation,
+  editEducation,
+  addExperience,
+  editExperience,
+  addSocial,
+  editSocial,
 };
