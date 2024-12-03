@@ -39,6 +39,8 @@ const userRegister = async (req, res) => {
     return;
   }
   try {
+    console.log("enter");
+
     const result = await db.query(
       "INSERT INTO Customer(id, firstname, lastname, age, gender, user_address, email, phone_number, bio, user_language, topics) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id",
       [
