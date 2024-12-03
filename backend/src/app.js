@@ -4,9 +4,9 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 dotenv.config();
+app.use(express.json());
 
 app.use(cors());
-app.use(express.json());
 app.use(require("../routes/routes"));
 
 app.listen(process.env.PORT, () =>

@@ -1,4 +1,4 @@
-export const userAuthRegisterUtils = async (
+const userAuthRegisterUtils = async (
   firstname,
   lastname,
   age,
@@ -54,3 +54,5 @@ export const userAuthRegisterUtils = async (
     return { success: false, message: error };
   }
 };
+
+module.exports = userAuthRegisterUtils;
