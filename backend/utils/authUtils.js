@@ -55,4 +55,4 @@ const userAuthRegisterUtils = async (
   }
 };
 
-module.export = userAuthRegisterUtils;
+module.exports = userAuthRegisterUtils;
