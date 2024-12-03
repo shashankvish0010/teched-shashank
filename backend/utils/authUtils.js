@@ -30,9 +30,9 @@ const userAuthRegisterUtils = async (
       return { success: false, message: "Enter a valid email address" };
     }
 
-    const gender = ["MALE", "FEMALE"];
+    const genders = ["MALE", "FEMALE"];
 
-    if (!gender.includes(gender)) {
+    if (!genders.includes(gender.toUpperCase())) {
       return { success: false, message: "Gender can only be Male or Female" };
     }
 
