@@ -1,4 +1,5 @@
 const emailValidate = require("../services/validators");
+const db = require("../dbconnect");
 
 const userAuthRegisterUtils = async (
   firstname,
