@@ -12,10 +12,13 @@ const {
   editExperience,
   addSocial,
   editSocial,
+  editDetails,
 } = require("../controllers/authController");
 router.get("/", initialServer);
 
 router.post("/user/register", userRegister);
+
+router.post("edit/user/:userId", editDetails);
 
 router.put("/user/edit/bio/:userId", editBio);
 

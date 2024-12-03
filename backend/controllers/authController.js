@@ -8,6 +8,7 @@ const initialServer = (req, res) => {
 
 const userRegister = async (req, res) => {
   const id = crypto.randomUUID();
+  console.log(id);
 
   const {
     firstname,
@@ -474,6 +475,7 @@ const editSocial = async () => {
 module.exports = {
   initialServer,
   userRegister,
+  editDetails,
   editBio,
   prefLanguage,
   addEducation,
