@@ -1,5 +1,9 @@
 const { v4: uuidv4 } = require("uuid");
-import db from "../dbconnect";
+const db = require("../dbconnect");
+
+export const initialServer = (req, res) => {
+  res.json({ success: true, message: `Hello from teched loan app server.` });
+};
 
 export const userRegister = async (req, res) => {
   const id = uuidv4();

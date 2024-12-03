@@ -1,6 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
+const {
+  initialServer,
+  userRegister,
+  editBio,
+  prefLanguage,
+  addEducation,
+  editEducation,
+  addEducation,
+  addExperience,
+  editExperience,
+  addSocial,
+  editSocial,
+} = require("../controllers/authController");
 router.get("/", initialServer);
 
 router.post("/user/register", userRegister);
