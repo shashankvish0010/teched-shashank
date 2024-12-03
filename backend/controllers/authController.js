@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const db = require("../dbconnect");
-const { userAuthRegisterUtils } = require("../utils/authUtils");
+const userAuthRegisterUtils = require("../utils/authUtils");
 
 const initialServer = (req, res) => {
   res.json({ success: true, message: `Hello from teched loan app server.` });
