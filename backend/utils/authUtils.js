@@ -36,14 +36,9 @@ const userAuthRegisterUtils = async (
       return { success: false, message: "Gender can only be Male or Female" };
     }
 
-    if (Number(phone_number).length < 10 || isNaN(phone_number) == true) {
-      return { success: false, message: "Enter a valid 10 digit phone no." };
-    }
-
-    const user = await db.query("SELECT id FROM Customer WHERE email=$1", [
+    const user = await db.query("SELECT * FROM Customer WHERE email=$1", [
       email,
     ]);
-    console.log(user.rowCount);
 
     if (Number(user.rowCount) > 0) {
       return { success: false, message: "Email already exists." };
@@ -51,7 +46,7 @@ const userAuthRegisterUtils = async (
 
     return { success: true, message: "No user auth errors found." };
   } catch (error) {
-    return { success: false, message: error };
+    return { success: false, message: `error while auth: ${error}` };
   }
 };
 
