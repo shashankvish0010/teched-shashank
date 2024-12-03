@@ -55,7 +55,7 @@ const userRegister = async (req, res) => {
         topics,
       ]
     );
-    if (result) {
+    if (result.rowCount > 0) {
       res.json({ success: true, message: "Registered Successfully" });
     } else {
       res.json({ success: false, message: "Not Registered Successfully" });
