@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require("uuid");
+const crypto = require("crypto");
 const db = require("../dbconnect");
 
 export const initialServer = (req, res) => {
@@ -6,7 +6,8 @@ export const initialServer = (req, res) => {
 };
 
 export const userRegister = async (req, res) => {
-  const id = uuidv4();
+  const id = crypto.randomUUID();
+
   const {
     firstname,
     lastname,
@@ -182,7 +183,7 @@ export const prefLanguage = async () => {
 export const addEducation = async () => {
   const { degree, college, field, start_date, end_date } = req.body;
   const { userId } = req.params();
-  const id = uuidv4();
+  const id = crypto.randomUUID();
 
   if (!userId) {
     res.json({ success: false, message: "No user id found in url" });
@@ -258,7 +259,7 @@ export const editEducation = async () => {
 };
 
 export const addExperience = async () => {
-  const id = uuidv4();
+  const id = crypto.randomUUID();
 
   const {
     job_title,
