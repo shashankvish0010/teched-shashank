@@ -8,7 +8,6 @@ const {
   prefLanguage,
   addEducation,
   editEducation,
-  addEducation,
   addExperience,
   editExperience,
   addSocial,
