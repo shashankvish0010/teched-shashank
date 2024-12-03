@@ -36,7 +36,7 @@ const userAuthRegisterUtils = async (
       return { success: false, message: "Gender can only be Male or Female" };
     }
 
-    if (Number(phone_number).length < 10) {
+    if (Number(phone_number).length < 10 || isNaN(phone_number) == true) {
       return { success: false, message: "Enter a valid 10 digit phone no." };
     }
 
